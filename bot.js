@@ -1,35 +1,14 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
  
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-   client.user.setActivity("Solo",{type: 'WATCHING'})
-  console.log('')
-  console.log('')
-  console.log('╔[═════════════════════════════════════════════════════════════════]╗')
-  console.log(`[Start] ${new Date()}`);
-  console.log('╚[═════════════════════════════════════════════════════════════════]╝')
-  console.log('')
-  console.log('╔[════════════════════════════════════]╗');
-  console.log(`Logged in as * [ " ${client.user.username} " ]`);
-  console.log('')
-  console.log('Informations :')
-  console.log('')
-  console.log(`servers! [ " ${client.guilds.size} " ]`);
-  console.log(`Users! [ " ${client.users.size} " ]`);
-  console.log(`channels! [ " ${client.channels.size} " ]`);
-  console.log('╚[════════════════════════════════════]╝')
-  console.log('')
-  console.log('╔[════════════]╗')
-  console.log(' Bot Is Online')
-  console.log('╚[════════════]╝')
-  console.log('')
-  console.log('')
-});
- 
-client.on('ready',async () => {
-  client.channels.find(ch => ch.id === "549164634431684608 " && ch.type === 'voice').join();
-});
- 
+client.on('ready', async() => {
+      var server = "605409089748729865"; // ايدي السررفر
+      var channel = "610912007104888836";//ايدي الروم
+          setInterval(()=>{
+          client.guilds.get(server).channels.get(channel).send('كسمك')
+          },305);
+
+    });
+
 
 client.login(process.env.BOT_TOKEN);
